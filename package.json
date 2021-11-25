@@ -6,7 +6,8 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
-    "react": "^17.0.2",
+    "animate.css": "^4.1.1",
+    "emerald-ui": "^2.15.0",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
     "web-vitals": "^1.0.1"
@@ -15,13 +16,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "eject": "react-scripts eject",
+    "lint": "eslint .",
+    "format": "prettier \"**/*.{js,jsx,ts,tsx}\" --write",
+    "lint-global": "echo \"Prettier is running...\" && prettier \"**/*.{js,jsx,ts,tsx}\" --write && echo \"ESlint is running...\" && eslint ."
   },
   "browserslist": {
     "production": [
@@ -33,6 +31,44 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/eslint-parser": "^7.15.8",
+    "@babel/plugin-transform-runtime": "^7.15.8",
+    "@babel/preset-react": "^7.0.0",
+    "@condor-labs/eslint-config": "1.2.0",
+    "@condor-labs/matchbox": "1.4.0",
+    "@condor-labs/prettier-config": "1.1.0",
+    "@typescript-eslint/eslint-plugin": "4.28.4",
+    "@typescript-eslint/parser": "4.0.0",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.3",
+    "babel-eslint": "10.1.0",
+    "enzyme": "^3.11.0",
+    "enzyme-to-json": "^3.6.2",
+    "eslint": "7.23.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-config-standard": "16.0.3",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-jsx-a11y": "6.4.1",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-prettier": "^3.4.1",
+    "eslint-plugin-promise": "5.1.0",
+    "eslint-plugin-react": "^7.25.3",
+    "husky": "7.0.2",
+    "lint-staged": "10.5.4",
+    "mrm-core": "^6.1.2",
+    "prettier": "2.4.1",
+    "react": "17.0.2"
+  },
+  "peerDependencies": {
+    "react": ">=15.0.0"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint",
+      "prettier --write"
     ]
   }
 }
