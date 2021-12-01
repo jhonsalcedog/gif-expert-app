@@ -4,7 +4,7 @@ import TextField from 'emerald-ui/lib/TextField';
 
 import PropTypes from 'prop-types';
 
-const AddCategory = ({ setCategories }) => {
+const AddCategory = ({ setCategories, categories }) => {
   const [inputValue, setInputValue] = useState('');
 
   const handleInputChange = (e) => {
@@ -15,7 +15,8 @@ const AddCategory = ({ setCategories }) => {
     e.preventDefault();
 
     if (inputValue.trim().length > 2) {
-      setCategories((prevCategories) => [inputValue, ...prevCategories]);
+      setCategories([inputValue, ...categories]);
+      // handleAdd(inputValue);
       setInputValue('');
     }
   };
@@ -29,8 +30,13 @@ const AddCategory = ({ setCategories }) => {
   );
 };
 
+AddCategory.defaultProps = {
+  categories: [],
+};
+
 AddCategory.propTypes = {
   setCategories: PropTypes.func.isRequired,
+  categories: PropTypes.array,
 };
 
 export default AddCategory;

@@ -11,7 +11,6 @@ import './GifGrid.css';
 
 const GifGrid = ({ category }) => {
   const { data: images, loading } = useFetchGifs(category);
-
   return (
     <div>
       <h3>
@@ -35,7 +34,7 @@ const GifGrid = ({ category }) => {
 };
 
 GifGrid.propTypes = {
-  category: PropTypes.string,
+  category: PropTypes.string.isRequired,
 };
 
 export default GifGrid;

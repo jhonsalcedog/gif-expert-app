@@ -11,9 +11,7 @@ const GifGridItem = ({ url, title }) => {
   return (
     <Col md={6} xs={12} className="animate__animated animate__zoomIn">
       <Card className="gif-card">
-        <Card.Header>
-          <h1 className="eui-card-header-title">{title}</h1>
-        </Card.Header>
+        <h2 className="eui-card-header-title">{title}</h2>
         <div>
           <img className="gif-card-img" src={url} alt={title} />
         </div>
@@ -23,8 +21,8 @@ const GifGridItem = ({ url, title }) => {
 };
 
 GifGridItem.propTypes = {
-  url: PropTypes.string,
-  title: PropTypes.string,
+  url: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 export default GifGridItem;
